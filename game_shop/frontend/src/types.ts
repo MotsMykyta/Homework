@@ -9,3 +9,25 @@ export interface Game {
     releaseYear: number;
     inStock: boolean;
 }
+
+export interface GameFromPayload {
+    title: string;
+    genre: string;
+    price: number;
+    releaseYear: number;
+    platform: string[];
+    cover?: string;
+    inStock?: boolean;
+}
+
+export interface PaginatedResponse<T> {
+    data: T[];
+    meta: {
+        total: number;
+        totalPages: number;
+        page: number;
+        limit: number;
+        hasNext: boolean;
+        hasPrevious: boolean;
+    };
+}
