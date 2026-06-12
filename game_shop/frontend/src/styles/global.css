@@ -11,3 +11,17 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; /* Более темный красный при наведении */
+}

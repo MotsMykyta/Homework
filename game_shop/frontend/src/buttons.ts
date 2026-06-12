@@ -69,18 +69,34 @@ async function handleEditClick(gameId: number, gameCard: HTMLElement) {
 }
 
 async function handleDeleteClick(gameId: number, gameCard: HTMLElement) {
-    if (confirm('Are you sure you want to delete this game?')) {
+    const modal = document.getElementById('delete-confirm-modal') as HTMLDivElement;
+    const confirmButton = document.getElementById('btn-confirm-delete') as HTMLButtonElement;
+    const cancelButton = document.getElementById('btn-cancel-delete') as HTMLButtonElement;
+
+    if(!modal || !confirmButton || !cancelButton) return;
+
+    modal.style.display = 'flex';
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    }
+    cancelButton.onclick = closeModal;
+
+    confirmButton.onclick = async() => {
         try {
             await deleteGame(gameId);
             gameCard.remove();
             showNotification('Game deleted successfully!', 'success');
+            closeModal();
         } catch (error) {
             console.error('Error deleting game:', error);
             showNotification('Failed to delete game. Please try again later.', 'error');
+            closeModal();
         }
-    }
+    };
 }
-
 
 export function setupGameActions(container: HTMLElement | null): void {
     if (!container) return;
