@@ -1,0 +1,71 @@
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Сама карточка */
+.game-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект полета при наведении */
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
+}
+
+/* Обложка игры */
+.game-cover {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Картинка не сплющится, а обрежется красиво */
+    border-bottom: 2px solid #333;
+}
+
+/* Блок с информацией внутри карточки */
+.game-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Растягивает блок, чтобы кнопки всегда были внизу */
+}
+
+.game-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.game-genre, .game-platform, .game-price {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.game-price {
+    font-size: 1.1rem;
+    color: #2ecc71; /* Зеленая цена для акцента */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Блок с кнопками */
+.game-actions {
+    margin-top: auto; /* Прижимает кнопки к самому низу карточки */
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Цвета кнопок на карточке */
+.btn-detail { background-color: #3498db; color: #fff; flex-grow: 1; }
+.btn-edit { background-color: #f39c12; color: #fff; }
+.btn-delete { background-color: #e74c3c; color: #fff; }
