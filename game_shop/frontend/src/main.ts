@@ -3,6 +3,8 @@ import {renderGames} from './ui';
 import {setupGameActions} from './buttons';
 import {setupSearch} from './search';
 import './styles/global.css';
+import './styles/cards.css';
+import './styles/details.css';
 
 async function init() {
     try {
