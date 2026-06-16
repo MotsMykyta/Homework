@@ -26,7 +26,7 @@
         "PS5",
         "Xbox"
       ],
-      "cover": "https://upload.wikimedia.org/wikipedia/en/5/51/Elden_Ring_Boxart.jpg",
+      "cover": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7c/Elden_Ring_-_cover.jpg/330px-Elden_Ring_-_cover.jpg",
       "releaseYear": 2022,
       "inStock": true
     },
@@ -57,7 +57,7 @@
         "Xbox",
         "Switch"
       ],
-      "cover": "https://upload.wikimedia.org/wikipedia/en/0/04/Hollow_Knight_cover.jpg",
+      "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Hollow_Knight_2026_cover_art.jpg/250px-Hollow_Knight_2026_cover_art.jpg",
       "releaseYear": 2017,
       "inStock": true
     },
@@ -71,7 +71,7 @@
         "PS5",
         "PS4"
       ],
-      "cover": "https://upload.wikimedia.org/wikipedia/en/0/00/God_of_War_Ragnar%C3%B6k_cover.jpg",
+      "cover": "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6e/God_of_War-_Ragnar%C3%B6k.jpg/330px-God_of_War-_Ragnar%C3%B6k.jpg",
       "releaseYear": 2022,
       "inStock": false
     },
