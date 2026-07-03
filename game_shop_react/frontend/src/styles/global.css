@@ -1,0 +1,130 @@
+/* --- ЦВЕТОВАЯ ПАЛИТРА И ПЕРЕМЕННЫЕ --- */
+:root {
+  --bg-main: #0f172a;       /* Очень темный синий фон */
+  --bg-card: #1e293b;       /* Цвет карточек */
+  --bg-input: #334155;      /* Цвет полей ввода */
+  --text-main: #f8fafc;     /* Белый текст */
+  --text-muted: #94a3b8;    /* Серый текст для описаний */
+  
+  --accent: #3b82f6;        /* Главный синий акцент */
+  --accent-hover: #2563eb;
+  
+  --btn-edit: #eab308;      /* Желтый */
+  --btn-delete: #ef4444;    /* Красный */
+  --btn-success: #22c55e;   /* Зеленый */
+  
+  --radius: 12px;
+  --transition: 0.2s ease-in-out;
+}
+
+/* --- БАЗА --- */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* --- ПОИСК --- */
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+.search-container input, .modal-content input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: var(--bg-input);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text-main);
+  outline: none;
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+.search-container input:focus, .modal-content input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* --- КНОПКИ --- */
+button {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  color: white;
+  font-size: 0.95rem;
+}
+
+button:active { transform: scale(0.96); }
+
+.btn-detail { background-color: var(--accent); }
+.btn-detail:hover { background-color: var(--accent-hover); }
+
+.btn-edit { background-color: var(--btn-edit); color: #000; }
+.btn-edit:hover { background-color: #ca8a04; }
+
+.btn-delete, .btn-danger { background-color: var(--btn-delete); }
+.btn-delete:hover, .btn-danger:hover { background-color: #dc2626; }
+
+.btn-success { background-color: var(--btn-success); }
+.btn-success:hover { background-color: #16a34a; }
+
+.btn-secondary { background-color: #475569; }
+.btn-secondary:hover { background-color: #64748b; }
+
+/* --- МОДАЛЬНЫЕ ОКНА --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content h3 { margin-top: 0; font-size: 1.5rem; }
+.modal-content p { color: var(--text-muted); margin-bottom: 1.5rem; }
+.modal-content input { margin-bottom: 1.5rem; }
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.modal-actions button { flex: 1; padding: 0.8rem; }
