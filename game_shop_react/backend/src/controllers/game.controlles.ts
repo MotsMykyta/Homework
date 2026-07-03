@@ -1,16 +1,25 @@
 import {Request, Response} from "express";
 import pool from "../db/database";
 import {Game} from "../types/types";
+import { getPaginationParams, formatPaginationResponse } from "../utils/pagination.util";
 
 export class GameController {
 
     public getALLGames = async (req: Request, res: Response): Promise<void> => {
-        try{
-            const result = await pool.query<Game>('SELECT * FROM games ORDER BY id ASC');
-            res.status(200).json(result.rows);
+        try {
+            const { page, limit, offset } = getPaginationParams(req);
+            const gameResult = await pool.query<Game>(
+                'SELECT * FROM games ORDER BY id LIMIT $1 OFFSET $2',
+                [limit, offset]
+            );
+            const countResult = await pool.query('SELECT COUNT(*) FROM games');
+            const totalItems = parseInt(countResult.rows[0].count);
+
+            const response = formatPaginationResponse(gameResult.rows, totalItems, page, limit);
+            res.status(200).json(response);
         } catch (error) {
             console.error('Error fetching games:', error);
-            res.status(500).json({ error: 'Internal server error' });  
+            res.status(500).json({ error: 'Internal server error' });
         }
     };
 
