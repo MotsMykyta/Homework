@@ -4,7 +4,7 @@
       "id": 1,
       "title": "The Witcher 3: Wild Hunt",
       "genre": "RPG",
-      "price": 64,
+      "price": 67,
       "rating": 9.5,
       "platform": [
         "PC",
@@ -74,19 +74,6 @@
       "cover": "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6e/God_of_War-_Ragnar%C3%B6k.jpg/330px-God_of_War-_Ragnar%C3%B6k.jpg",
       "releaseYear": 2022,
       "inStock": false
-    },
-    {
-      "title": "Songs of Silence",
-      "genre": "Strategy",
-      "platform": [
-        "PC",
-        "Xbox"
-      ],
-      "id": 6,
-      "releaseYear": 2015,
-      "price": 600,
-      "cover": "https://gaming-cdn.com/images/products/16324/orig/songs-of-silence-pc-game-steam-cover.jpg?v=1731596294",
-      "inStock": true
     }
   ]
 }
